@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Code Debugger & Optimizer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 800px;
+      position: relative;
+    }
+
+    textarea {
+      width: 95%;
+      height: 300px;
+      padding: 15px;
+      font-family: monospace;
+      font-size: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      background: #f9f9f9;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 25px;
+      background-color: #007BFF;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .spinner-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.85);
+      width: 100%;
+      height: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+    }
+
+    .spinner {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #007BFF;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🤖 AI-Powered Code Debugger & Optimizer</h1>
+  <form id="codeForm" action="/analyze" method="POST">
+    <label for="code"><strong>Enter Your Code:</strong></label><br><br>
+    <textarea name="code" id="code" placeholder="Paste your code here..." required></textarea><br>
+    <button type="submit">🧠 Analyze Code</button>
+    <div class="spinner-overlay" id="spinnerOverlay">
+      <div class="spinner"></div>
+    </div>
+  </form>
+
+  <script>
+    const form = document.getElementById('codeForm');
+    const spinner = document.getElementById('spinnerOverlay');
+
+    form.addEventListener('submit', () => {
+      spinner.style.display = 'flex';
+    });
+  </script>
+</body>
+</html>
